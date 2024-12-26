@@ -429,7 +429,14 @@ local function run_task_select()
         warning("There are no tasks defined in justfile")
         return
     end
-    task_select(themes.get_ivy())
+    task_select(themes.get_ivy({
+                borderchars = { ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ' },
+                layout_config = {
+                    height = 0.4,
+                },
+            }
+        )
+    )
 end
 local function run_task_name(task_name)
     local tasks = get_task_names()
