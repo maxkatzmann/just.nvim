@@ -268,6 +268,9 @@ local function task_runner(task_name)
     end
     local start_time = os.clock()
     local append_qf_data = function(data)
+        if data == nil then
+			return
+		end
         if async_worker == nil then
             return
         end
